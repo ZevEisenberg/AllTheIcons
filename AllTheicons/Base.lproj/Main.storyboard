@@ -24,7 +24,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                        <real key="value" value="0.01"/>
+                                        <real key="value" value="0.51000000000000001"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="segments">
                                         <integer key="value" value="32"/>
@@ -37,6 +37,12 @@
                                     <action selector="sliderSlid:" destination="BYZ-38-t0r" eventType="valueChanged" id="9Qp-w8-S61"/>
                                 </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sR0-RH-ujz">
+                                <rect key="frame" x="8" y="1107.5" width="818" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -46,12 +52,17 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1ia-D8-51q" secondAttribute="trailing" constant="8" id="SDP-Qu-wPY"/>
                             <constraint firstItem="1ia-D8-51q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="T7V-iG-FWv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="19w-6D-fJw" secondAttribute="bottom" constant="8" id="dsS-qS-Do4"/>
+                            <constraint firstItem="sR0-RH-ujz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="h7M-bS-3iA"/>
+                            <constraint firstItem="19w-6D-fJw" firstAttribute="top" secondItem="sR0-RH-ujz" secondAttribute="bottom" constant="8" id="hF0-X9-Pi3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sR0-RH-ujz" secondAttribute="trailing" constant="8" id="qBy-EX-fF8"/>
                             <constraint firstItem="1ia-D8-51q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="v83-gj-hhX"/>
+                            <constraint firstItem="sR0-RH-ujz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1ia-D8-51q" secondAttribute="bottom" constant="8" id="vRH-ff-sr7"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="iconView" destination="1ia-D8-51q" id="cZp-te-aMw"/>
                         <outlet property="slider" destination="19w-6D-fJw" id="irT-au-NlX"/>
+                        <outlet property="valueLabel" destination="sR0-RH-ujz" id="p3O-2n-4iA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

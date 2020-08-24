@@ -14,28 +14,25 @@ import UIKit
 
     @IBInspectable var value: Float = 0 { // should be clamped from 0 to 1
         didSet {
-            setNeedsDisplay()
+            update()
         }
     }
 
     @IBInspectable var segments: Int = 0 {
         didSet {
-            squareCount = segments * segments
-            maxValue = ceil(pow(2, squareCount) - 1)
-            setNeedsDisplay()
+            update()
         }
     }
 
     var squareCount: Int = 0
     var maxValue: BInt = 0
+    var intToRender: BInt = 0
 
     // Private Properties
 
     override func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else { return }
 
-        let doubleOfValue = BDouble(floatLiteral: Double(value))
-        let intToRender = ceil(maxValue * doubleOfValue)
 
         let dividers = segments - 1
         let dividerWidth: CGFloat = 1
@@ -84,6 +81,19 @@ import UIKit
 
         context.setFillColor(UIColor.black.cgColor)
         context.fillPath()
+    }
+
+}
+
+private extension IconView {
+
+    func update() {
+        squareCount = segments * segments
+        maxValue = ceil(pow(2, squareCount) - 1)
+        // Need a floating point value to be able to multiply by slider value
+        let doubleOfValue = BDouble(floatLiteral: Double(value))
+        intToRender = ceil(maxValue * doubleOfValue)
+        setNeedsDisplay()
     }
 
 }
