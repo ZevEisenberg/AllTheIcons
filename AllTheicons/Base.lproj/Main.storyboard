@@ -22,9 +22,20 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1ia-D8-51q" secondAttribute="height" id="k43-h2-E4s"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                        <real key="value" value="0.01"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="segments">
+                                        <integer key="value" value="32"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="4000" translatesAutoresizingMaskIntoConstraints="NO" id="19w-6D-fJw">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="19w-6D-fJw">
                                 <rect key="frame" x="6" y="1136" width="822" height="31"/>
+                                <connections>
+                                    <action selector="sliderSlid:" destination="BYZ-38-t0r" eventType="valueChanged" id="9Qp-w8-S61"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -38,6 +49,10 @@
                             <constraint firstItem="1ia-D8-51q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="v83-gj-hhX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="iconView" destination="1ia-D8-51q" id="cZp-te-aMw"/>
+                        <outlet property="slider" destination="19w-6D-fJw" id="irT-au-NlX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

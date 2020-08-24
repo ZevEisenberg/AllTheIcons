@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		CD53C95924F344BB00568B80 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD53C95824F344BB00568B80 /* Assets.xcassets */; };
 		CD53C95C24F344BB00568B80 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD53C95A24F344BB00568B80 /* LaunchScreen.storyboard */; };
 		CD53C96424F3456400568B80 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53C96324F3456400568B80 /* IconView.swift */; };
+		CDEEC42624F34F4C00ECDA7B /* BigNumber in Frameworks */ = {isa = PBXBuildFile; productRef = CDEEC42524F34F4C00ECDA7B /* BigNumber */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDEEC42624F34F4C00ECDA7B /* BigNumber in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,9 @@
 			dependencies = (
 			);
 			name = AllTheicons;
+			packageProductDependencies = (
+				CDEEC42524F34F4C00ECDA7B /* BigNumber */,
+			);
 			productName = AllTheicons;
 			productReference = CD53C94A24F344BA00568B80 /* AllTheicons.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +118,9 @@
 				Base,
 			);
 			mainGroup = CD53C94124F344BA00568B80;
+			packageReferences = (
+				CDEEC42424F34F4C00ECDA7B /* XCRemoteSwiftPackageReference "Swift-BigInt" */,
+			);
 			productRefGroup = CD53C94B24F344BA00568B80 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -345,6 +353,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CDEEC42424F34F4C00ECDA7B /* XCRemoteSwiftPackageReference "Swift-BigInt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:mkrd/Swift-BigInt.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CDEEC42524F34F4C00ECDA7B /* BigNumber */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CDEEC42424F34F4C00ECDA7B /* XCRemoteSwiftPackageReference "Swift-BigInt" */;
+			productName = BigNumber;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CD53C94224F344BA00568B80 /* Project object */;
 }
