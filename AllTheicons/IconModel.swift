@@ -42,10 +42,26 @@ struct IconModel {
     }
 
     mutating func updateBit(atIndex index: Int, to newValue: Bool) {
-        if newValue {
-            intToRender |= (BInt(1) << index)
+        // via https://stackoverflow.com/a/47990/255489
+
+        if index == 0 {
+            // special-case index 0 because it doesn't play nice with the bit shifting,
+            // at least with this BigNum library, or else I don't understand bit
+            // shifting, which is also likely.
+
+            // If current value is even, least significant bit is 0
+            let currentValue = !intToRender.isMultiple(of: 2)
+            switch (currentValue, newValue) {
+            case (true, true), (false, false): break
+            case (true, false): intToRender -= 1
+            case (false, true): intToRender += 1
+            }
+        }
+        else if newValue {
+            let newBit = BInt(1) << index
+            intToRender |= newBit
         } else {
-            intToRender &= ~(BInt(1) << index)
+            intToRender ^= (1 ^ intToRender) & (1 << index)
         }
         updatingInternally = true
         defer { updatingInternally = false }
