@@ -63,9 +63,19 @@ struct IconModel {
         } else {
             intToRender ^= (1 ^ intToRender) & (1 << index)
         }
-        updatingInternally = true
-        defer { updatingInternally = false }
-        value = Float(BDouble(intToRender, over: maxValue).decimalExpansion(precisionAfterDecimalPoint: 60)) ?? 0
+        updateValue()
+    }
+
+    mutating func incrementValueIfPossible() {
+        guard intToRender < maxValue else { return }
+        intToRender += 1
+        updateValue()
+    }
+
+    mutating func decrementValueIfPossible() {
+        guard intToRender > 0 else { return }
+        intToRender -= 1
+        updateValue()
     }
 
     func getBit(atIndex index: Int) -> Bool {
@@ -80,5 +90,11 @@ private extension IconModel {
         // Need a floating point value to be able to multiply by value
         let doubleOfValue = BDouble(floatLiteral: Double(value))
         intToRender = ceil(maxValue * doubleOfValue)
+    }
+
+    mutating func updateValue() {
+        updatingInternally = true
+        defer { updatingInternally = false }
+        value = Float(BDouble(intToRender, over: maxValue).decimalExpansion(precisionAfterDecimalPoint: 60)) ?? 0
     }
 }

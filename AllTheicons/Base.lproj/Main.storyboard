@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AllTheicons" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1194"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ia-D8-51q" customClass="IconView" customModule="AllTheicons" customModuleProvider="target">
-                                <rect key="frame" x="8" y="8" width="304" height="304"/>
+                                <rect key="frame" x="8" y="8" width="818" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1ia-D8-51q" secondAttribute="height" id="k43-h2-E4s"/>
@@ -32,7 +32,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEp-9o-B4l" userLabel="Placeholder Label">
-                                <rect key="frame" x="8" y="420.5" width="304" height="101.5"/>
+                                <rect key="frame" x="8" y="1028.5" width="818" height="101.5"/>
                                 <string key="text">a
 a
 a
@@ -42,14 +42,39 @@ a</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="19w-6D-fJw">
-                                <rect key="frame" x="6" y="530" width="308" height="31"/>
-                                <connections>
-                                    <action selector="sliderSlid:" destination="BYZ-38-t0r" eventType="valueChanged" id="9Qp-w8-S61"/>
-                                </connections>
-                            </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gIF-oJ-jrv">
+                                <rect key="frame" x="8" y="1138" width="818" height="30"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="19w-6D-fJw">
+                                        <rect key="frame" x="-2" y="0.0" width="712" height="31"/>
+                                        <connections>
+                                            <action selector="sliderSlid:" destination="BYZ-38-t0r" eventType="valueChanged" id="9Qp-w8-S61"/>
+                                        </connections>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ku-rv-jFw">
+                                        <rect key="frame" x="713" y="0.0" width="50" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="RHF-zZ-PbY"/>
+                                        </constraints>
+                                        <state key="normal" image="minus" catalog="system"/>
+                                        <connections>
+                                            <action selector="minusTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vYg-D6-g9D"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11n-XI-8am">
+                                        <rect key="frame" x="768" y="0.0" width="50" height="30"/>
+                                        <state key="normal" image="plus" catalog="system"/>
+                                        <connections>
+                                            <action selector="plusTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kw9-tF-ODD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3ku-rv-jFw" firstAttribute="width" secondItem="11n-XI-8am" secondAttribute="width" id="obO-G1-Ri0"/>
+                                </constraints>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" text="0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sR0-RH-ujz">
-                                <rect key="frame" x="8" y="420.5" width="304" height="20.5"/>
+                                <rect key="frame" x="8" y="1028.5" width="818" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -59,16 +84,16 @@ a</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="FEp-9o-B4l" firstAttribute="top" secondItem="sR0-RH-ujz" secondAttribute="top" id="1B8-0P-Qhx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="19w-6D-fJw" secondAttribute="trailing" constant="8" id="2NA-XC-4j7"/>
-                            <constraint firstItem="19w-6D-fJw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="6Lz-ol-TLC"/>
                             <constraint firstItem="sR0-RH-ujz" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="FEp-9o-B4l" secondAttribute="bottom" id="8Ya-az-Ilw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gIF-oJ-jrv" secondAttribute="trailing" constant="8" id="AVG-Ao-51X"/>
                             <constraint firstItem="FEp-9o-B4l" firstAttribute="leading" secondItem="sR0-RH-ujz" secondAttribute="leading" id="F1Z-7j-TNi"/>
+                            <constraint firstItem="gIF-oJ-jrv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="IEB-nn-ywL"/>
+                            <constraint firstItem="gIF-oJ-jrv" firstAttribute="top" secondItem="FEp-9o-B4l" secondAttribute="bottom" constant="8" symbolic="YES" id="P8I-hC-VZk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1ia-D8-51q" secondAttribute="trailing" constant="8" id="SDP-Qu-wPY"/>
                             <constraint firstItem="1ia-D8-51q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="T7V-iG-FWv"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="19w-6D-fJw" secondAttribute="bottom" constant="8" id="dsS-qS-Do4"/>
                             <constraint firstItem="sR0-RH-ujz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="h7M-bS-3iA"/>
-                            <constraint firstItem="19w-6D-fJw" firstAttribute="top" secondItem="FEp-9o-B4l" secondAttribute="bottom" constant="8" id="hF0-X9-Pi3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sR0-RH-ujz" secondAttribute="trailing" constant="8" id="qBy-EX-fF8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gIF-oJ-jrv" secondAttribute="bottom" constant="6" id="s4j-n9-2Ss"/>
                             <constraint firstItem="1ia-D8-51q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="v83-gj-hhX"/>
                             <constraint firstItem="sR0-RH-ujz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1ia-D8-51q" secondAttribute="bottom" constant="8" id="vRH-ff-sr7"/>
                             <constraint firstItem="FEp-9o-B4l" firstAttribute="trailing" secondItem="sR0-RH-ujz" secondAttribute="trailing" id="vdg-x3-EPH"/>
@@ -82,10 +107,12 @@ a</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="93" y="126"/>
+            <point key="canvasLocation" x="91.304347826086968" y="125.54347826086958"/>
         </scene>
     </scenes>
     <resources>
+        <image name="minus" catalog="system" width="128" height="24"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

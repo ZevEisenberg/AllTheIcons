@@ -25,6 +25,14 @@ class ViewController: UIViewController {
         updateIconView()
     }
 
+    @IBAction func minusTapped(_ sender: UIButton) {
+        iconView.decrementValueIfPossible()
+    }
+
+    @IBAction func plusTapped(_ sender: UIButton) {
+        iconView.incrementValueIfPossible()
+    }
+
 }
 
 private extension ViewController {

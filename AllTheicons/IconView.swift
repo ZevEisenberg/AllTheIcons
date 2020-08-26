@@ -103,6 +103,14 @@ protocol IconViewDelegate: AnyObject {
         context.fillPath()
     }
 
+    func incrementValueIfPossible() {
+        model.incrementValueIfPossible()
+    }
+
+    func decrementValueIfPossible() {
+        model.decrementValueIfPossible()
+    }
+
 }
 
 private extension IconView {
