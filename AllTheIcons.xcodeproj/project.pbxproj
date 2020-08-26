@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		CD21907F24F5E05F00793B66 /* IconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModel.swift; sourceTree = "<group>"; };
-		CD53C94A24F344BA00568B80 /* AllTheicons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllTheicons.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD53C94A24F344BA00568B80 /* AllTheIcons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllTheIcons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD53C94D24F344BA00568B80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD53C94F24F344BA00568B80 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CD53C95124F344BA00568B80 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		CD53C94124F344BA00568B80 = {
 			isa = PBXGroup;
 			children = (
-				CD53C94C24F344BA00568B80 /* AllTheicons */,
+				CD53C94C24F344BA00568B80 /* AllTheIcons */,
 				CD53C94B24F344BA00568B80 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		CD53C94B24F344BA00568B80 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CD53C94A24F344BA00568B80 /* AllTheicons.app */,
+				CD53C94A24F344BA00568B80 /* AllTheIcons.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CD53C94C24F344BA00568B80 /* AllTheicons */ = {
+		CD53C94C24F344BA00568B80 /* AllTheIcons */ = {
 			isa = PBXGroup;
 			children = (
 				CD53C94D24F344BA00568B80 /* AppDelegate.swift */,
@@ -72,15 +72,15 @@
 				CD53C95A24F344BB00568B80 /* LaunchScreen.storyboard */,
 				CD53C95D24F344BB00568B80 /* Info.plist */,
 			);
-			path = AllTheicons;
+			path = AllTheIcons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CD53C94924F344BA00568B80 /* AllTheicons */ = {
+		CD53C94924F344BA00568B80 /* AllTheIcons */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CD53C96024F344BB00568B80 /* Build configuration list for PBXNativeTarget "AllTheicons" */;
+			buildConfigurationList = CD53C96024F344BB00568B80 /* Build configuration list for PBXNativeTarget "AllTheIcons" */;
 			buildPhases = (
 				CD53C94624F344BA00568B80 /* Sources */,
 				CD53C94724F344BA00568B80 /* Frameworks */,
@@ -90,12 +90,12 @@
 			);
 			dependencies = (
 			);
-			name = AllTheicons;
+			name = AllTheIcons;
 			packageProductDependencies = (
 				CDEEC42524F34F4C00ECDA7B /* BigNumber */,
 			);
-			productName = AllTheicons;
-			productReference = CD53C94A24F344BA00568B80 /* AllTheicons.app */;
+			productName = AllTheIcons;
+			productReference = CD53C94A24F344BA00568B80 /* AllTheIcons.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -112,7 +112,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CD53C94524F344BA00568B80 /* Build configuration list for PBXProject "AllTheicons" */;
+			buildConfigurationList = CD53C94524F344BA00568B80 /* Build configuration list for PBXProject "AllTheIcons" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -128,7 +128,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CD53C94924F344BA00568B80 /* AllTheicons */,
+				CD53C94924F344BA00568B80 /* AllTheIcons */,
 			);
 		};
 /* End PBXProject section */
@@ -304,12 +304,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2KJHM26Y46;
-				INFOPLIST_FILE = AllTheicons/Info.plist;
+				INFOPLIST_FILE = AllTheIcons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.AllTheicons;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.AllTheIcons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -323,12 +323,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2KJHM26Y46;
-				INFOPLIST_FILE = AllTheicons/Info.plist;
+				INFOPLIST_FILE = AllTheIcons/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.AllTheicons;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zeveisenberg.AllTheIcons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -338,7 +338,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CD53C94524F344BA00568B80 /* Build configuration list for PBXProject "AllTheicons" */ = {
+		CD53C94524F344BA00568B80 /* Build configuration list for PBXProject "AllTheIcons" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD53C95E24F344BB00568B80 /* Debug */,
@@ -347,7 +347,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CD53C96024F344BB00568B80 /* Build configuration list for PBXNativeTarget "AllTheicons" */ = {
+		CD53C96024F344BB00568B80 /* Build configuration list for PBXNativeTarget "AllTheIcons" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CD53C96124F344BB00568B80 /* Debug */,

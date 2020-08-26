@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CD53C94924F344BA00568B80"
-               BuildableName = "AllTheicons.app"
-               BlueprintName = "AllTheicons"
-               ReferencedContainer = "container:AllTheicons.xcodeproj">
+               BuildableName = "AllTheIcons.app"
+               BlueprintName = "AllTheIcons"
+               ReferencedContainer = "container:AllTheIcons.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD53C94924F344BA00568B80"
-            BuildableName = "AllTheicons.app"
-            BlueprintName = "AllTheicons"
-            ReferencedContainer = "container:AllTheicons.xcodeproj">
+            BuildableName = "AllTheIcons.app"
+            BlueprintName = "AllTheIcons"
+            ReferencedContainer = "container:AllTheIcons.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CD53C94924F344BA00568B80"
-            BuildableName = "AllTheicons.app"
-            BlueprintName = "AllTheicons"
-            ReferencedContainer = "container:AllTheicons.xcodeproj">
+            BuildableName = "AllTheIcons.app"
+            BlueprintName = "AllTheIcons"
+            ReferencedContainer = "container:AllTheIcons.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

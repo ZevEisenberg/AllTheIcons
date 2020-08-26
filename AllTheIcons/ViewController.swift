@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  AllTheicons
+//  AllTheIcons
 //
 //  Created by Zev Eisenberg on 8/23/20.
 //
