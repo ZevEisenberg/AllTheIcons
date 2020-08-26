@@ -35,6 +35,10 @@ protocol IconViewDelegate: AnyObject {
         }
     }
 
+    // Private Properties
+
+    private var currentBrushValue = false // value to set bits to while drawing
+
     // Lifecycle
 
     override init(frame: CGRect) {
@@ -46,8 +50,6 @@ protocol IconViewDelegate: AnyObject {
         super.init(coder: coder)
         sharedSetup()
     }
-
-    // Private Properties
 
     override func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else { return }
@@ -106,18 +108,22 @@ protocol IconViewDelegate: AnyObject {
 private extension IconView {
 
     @objc func tapped(_ gesture: UITapGestureRecognizer) {
-        
+        let bitIndex = getBitIndex(at: gesture.location(in: self))
+        model.toggleBit(atIndex: bitIndex)
     }
 
     @objc func panned(_ gesture: UIPanGestureRecognizer) {
-        let location = gesture.location(in: self)
-        let normalizedX = (location.x / bounds.size.width).clamped(to: 0...1)
-        let normalizedY = (location.y / bounds.size.height).clamped(to: 0...1)
-        let col = Int(floor(normalizedX * CGFloat(segments)))
-        let row = Int(floor(normalizedY * CGFloat(segments)))
-        let bitIndex = (segments * row) + col
-        // TODO: handle true vs false
-        model.updateBit(atIndex: bitIndex, to: true)
+        let bitIndex = getBitIndex(at: gesture.location(in: self))
+        switch gesture.state {
+        case .began:
+            let startBit = model.getBit(atIndex: bitIndex)
+            let newValue = !startBit
+            currentBrushValue = newValue
+        case .changed:
+            model.updateBit(atIndex: bitIndex, to: currentBrushValue)
+        default:
+            break
+        }
     }
 
 }
@@ -135,6 +141,15 @@ private extension IconView {
     func update() {
         setNeedsDisplay()
         delegate?.iconViewChangedValue(self)
+    }
+
+    func getBitIndex(at location: CGPoint) -> Int {
+        let normalizedX = (location.x / bounds.size.width).clamped(to: 0...1)
+        let normalizedY = (location.y / bounds.size.height).clamped(to: 0...1)
+        let col = Int(floor(normalizedX * CGFloat(segments)))
+        let row = Int(floor(normalizedY * CGFloat(segments)))
+        let bitIndex = (segments * row) + col
+        return bitIndex
     }
 
 }

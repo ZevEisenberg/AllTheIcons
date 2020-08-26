@@ -35,6 +35,12 @@ struct IconModel {
         update()
     }
 
+    mutating func toggleBit(atIndex index: Int) {
+        let currentValue = getBit(atIndex: index)
+        let newValue = !currentValue
+        updateBit(atIndex: index, to: newValue)
+    }
+
     mutating func updateBit(atIndex index: Int, to newValue: Bool) {
         if newValue {
             intToRender |= (BInt(1) << index)
@@ -44,6 +50,10 @@ struct IconModel {
         updatingInternally = true
         defer { updatingInternally = false }
         value = Float(BDouble(intToRender, over: maxValue).decimalExpansion(precisionAfterDecimalPoint: 60)) ?? 0
+    }
+
+    func getBit(atIndex index: Int) -> Bool {
+        ((intToRender >> index) & 1) == 1
     }
 }
 
