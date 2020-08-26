@@ -42,8 +42,8 @@ struct IconModel {
             intToRender &= ~(BInt(1) << index)
         }
         updatingInternally = true
+        defer { updatingInternally = false }
         value = Float(BDouble(intToRender, over: maxValue).decimalExpansion(precisionAfterDecimalPoint: 60)) ?? 0
-        updatingInternally = false
     }
 }
 
