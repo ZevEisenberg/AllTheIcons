@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD21908024F5E05F00793B66 /* IconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD21907F24F5E05F00793B66 /* IconModel.swift */; };
 		CD53C94E24F344BA00568B80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53C94D24F344BA00568B80 /* AppDelegate.swift */; };
 		CD53C95024F344BA00568B80 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53C94F24F344BA00568B80 /* SceneDelegate.swift */; };
 		CD53C95224F344BA00568B80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD53C95124F344BA00568B80 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD21907F24F5E05F00793B66 /* IconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModel.swift; sourceTree = "<group>"; };
 		CD53C94A24F344BA00568B80 /* AllTheicons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllTheicons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD53C94D24F344BA00568B80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD53C94F24F344BA00568B80 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				CD53C94F24F344BA00568B80 /* SceneDelegate.swift */,
 				CD53C95124F344BA00568B80 /* ViewController.swift */,
 				CD53C96324F3456400568B80 /* IconView.swift */,
+				CD21907F24F5E05F00793B66 /* IconModel.swift */,
 				CD53C95324F344BA00568B80 /* Main.storyboard */,
 				CD53C95824F344BB00568B80 /* Assets.xcassets */,
 				CD53C95A24F344BB00568B80 /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD21908024F5E05F00793B66 /* IconModel.swift in Sources */,
 				CD53C95224F344BA00568B80 /* ViewController.swift in Sources */,
 				CD53C96424F3456400568B80 /* IconView.swift in Sources */,
 				CD53C94E24F344BA00568B80 /* AppDelegate.swift in Sources */,

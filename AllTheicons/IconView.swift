@@ -8,33 +8,51 @@
 import BigNumber
 import UIKit
 
+protocol IconViewDelegate: AnyObject {
+    func iconViewChangedValue(_ iconView: IconView)
+}
+
 @IBDesignable final class IconView: UIView {
 
     // Public Properties
 
-    @IBInspectable var value: Float = 0 { // should be clamped from 0 to 1
+    typealias Delegate = IconViewDelegate
+    weak var delegate: Delegate?
+
+    @IBInspectable var value: Float { // should be clamped from 0 to 1
+        get { model.value }
+        set { model.value = newValue }
+    }
+
+    @IBInspectable var segments: Int {
+        get { model.segments }
+        set { model.segments = newValue }
+    }
+
+    private(set) var model = IconModel(value: 0, segments: 32) {
         didSet {
             update()
         }
     }
 
-    @IBInspectable var segments: Int = 0 {
-        didSet {
-            update()
-        }
+    // Lifecycle
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        sharedSetup()
     }
 
-    var squareCount: Int = 0
-    var maxValue: BInt = 0
-    var intToRender: BInt = 0
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        sharedSetup()
+    }
 
     // Private Properties
 
     override func draw(_ rect: CGRect) {
         guard let context = UIGraphicsGetCurrentContext() else { return }
 
-
-        let dividers = segments - 1
+        let dividers = model.segments - 1
         let dividerWidth: CGFloat = 1
         // Assumes bounds is a square
         let segmentWidth = (bounds.width - dividerWidth) / CGFloat(segments)
@@ -65,8 +83,8 @@ import UIKit
 
         // Squares
 
-        for i in 0..<squareCount {
-            if (intToRender >> BInt(i)) & 1 == 1 { // is the ith digit 1?
+        for i in 0..<model.squareCount {
+            if (model.intToRender >> BInt(i)) & 1 == 1 { // is the ith digit 1?
                 let col = CGFloat(i % segments)
                 let row = CGFloat(i / segments) // assuming truncation/floor
                 let square = CGRect(
@@ -87,13 +105,46 @@ import UIKit
 
 private extension IconView {
 
-    func update() {
-        squareCount = segments * segments
-        maxValue = ceil(pow(2, squareCount) - 1)
-        // Need a floating point value to be able to multiply by slider value
-        let doubleOfValue = BDouble(floatLiteral: Double(value))
-        intToRender = ceil(maxValue * doubleOfValue)
-        setNeedsDisplay()
+    @objc func tapped(_ gesture: UITapGestureRecognizer) {
+        
     }
 
+    @objc func panned(_ gesture: UIPanGestureRecognizer) {
+        let location = gesture.location(in: self)
+        let normalizedX = (location.x / bounds.size.width).clamped(to: 0...1)
+        let normalizedY = (location.y / bounds.size.height).clamped(to: 0...1)
+        let col = Int(floor(normalizedX * CGFloat(segments)))
+        let row = Int(floor(normalizedY * CGFloat(segments)))
+        let bitIndex = (segments * row) + col
+        // TODO: handle true vs false
+        model.updateBit(atIndex: bitIndex, to: true)
+    }
+
+}
+
+private extension IconView {
+
+    func sharedSetup() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
+        addGestureRecognizer(tap)
+
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(panned(_:)))
+        addGestureRecognizer(pan)
+    }
+
+    func update() {
+        setNeedsDisplay()
+        delegate?.iconViewChangedValue(self)
+    }
+
+}
+
+private extension Comparable {
+    func clamped(to range: Range<Self>) -> Self {
+        max(range.lowerBound, min(self, range.upperBound))
+    }
+
+    func clamped(to range: ClosedRange<Self>) -> Self {
+        max(range.lowerBound, min(self, range.upperBound))
+    }
 }

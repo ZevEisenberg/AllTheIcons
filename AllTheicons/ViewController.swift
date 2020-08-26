@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         valueLabel.font = UIFont.monospacedDigitSystemFont(ofSize: 17, weight: .regular)
+        iconView.delegate = self
         updateIconView()
     }
 
@@ -30,7 +31,15 @@ private extension ViewController {
 
     func updateIconView() {
         iconView.value = slider.value
-        valueLabel.text = iconView.intToRender.asString(radix: 10)
+        valueLabel.text = iconView.model.intToRender.asString(radix: 10)
+    }
+
+}
+
+extension ViewController: IconViewDelegate {
+
+    func iconViewChangedValue(_ iconView: IconView) {
+        valueLabel.text = iconView.model.intToRender.asString(radix: 10)
     }
 
 }
