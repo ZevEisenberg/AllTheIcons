@@ -40,6 +40,7 @@ extension ViewController: IconViewDelegate {
 
     func iconViewChangedValue(_ iconView: IconView) {
         valueLabel.text = iconView.model.intToRender.asString(radix: 10)
+        slider.value = iconView.value
     }
 
 }
