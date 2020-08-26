@@ -1,6 +1,6 @@
 # AllTheIcons
 
-Inspired by [Every Icon](http://www.numeral.com/panels/everyicon.html), a digital art piece that will eventually display every 32×32 pixel black-and-white icon.
+Inspired by [Every Icon](http://www.numeral.com/panels/everyicon.html), a digital art piece that will eventually display every 32×32 pixel black-and-white icon. Built for [#MegaFavNumbers](https://www.youtube.com/playlist?list=PLar4u0v66vIodqt3KSZPsYyuULD5meoAo).
 
 AllTheIcons is an iOS app that lets you interact with the icon grid from Every Icon. It supports the following interactions:
 
