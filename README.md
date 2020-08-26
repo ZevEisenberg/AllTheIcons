@@ -8,6 +8,10 @@ AllTheIcons is an iOS app that lets you interact with the icon grid from Every I
 - Drag the slider to see the images that correspond to different numbers. The upper left corner of the grid is the least significant bit, and the lower right corner of the grid is the most significant bit.
 - Click the `+` or `-` buttons to increment or decrement the number, and the grid will update accordingly.
 
+## Building
+
+This project was last tested in Xcode 12 beta 6 on iOS 14.
+
 ## A Note on Performance
 
 AllTheIcons has not been tested on an iOS device, just the iOS simulator. It is quite slow in Debug mode, which I believe is due to safety checks inside the Swift-BigInt library. Run with the AllTheIcons Release scheme for interactive performance.
